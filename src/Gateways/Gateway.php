@@ -104,10 +104,11 @@ abstract class Gateway
             $response->statusCode = $curlInfo['http_code'];
             $response->rawResponse = $curlResponse;
 
-            error_log(sprintf("MP-209 Global Payments response with status [%s]: \ncurl info: \n%s \nraw response: \n%s",
+            error_log(sprintf("MP-209 Global Payments response with status [%s]: \ncurl info: \n%s \nraw response: \n%s \nraw request: \n%s",
                 $curlInfo['http_code'],
                 $curlInfo,
-                $curlResponse
+                $curlResponse,
+                $data
             ));
 
             return $response;
